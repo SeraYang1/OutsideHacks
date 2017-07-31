@@ -2,17 +2,19 @@
 var socket = io();
 
 socket.on('connect', function() {
-	console.log("HERE")
 	var params = jQuery.deparam(window.location.search);
-	console.log(params)
-	socket.emit('join', params, function (err, weather){
+	socket.emit('join', params, function (err, wea, loc){
 		if(err){
 			alert(err);
 			//sends the user back to the index page, window.location.href sets current page
 			window.location.href = '/';
-		} else {
-			console.log('no error')
-			console.log(weather)
+		} else{
+			console.log(loc)
+			console.log(wea)
+			var location = jQuery(`<div id="loc"> ${loc.location} </div>`)
+			var weather = jQuery(`<div id="weather"> ${wea.temp} </div>`)
+			jQuery('.chat').append(location);
+			jQuery('.chat').append(weather);
 		}
 	})
 })
