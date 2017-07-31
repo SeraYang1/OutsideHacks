@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Chat | ChatApp</title>
+</head>
+
+<body class="chat">
+
+	<div id="lyft-web-button-parent"></div>
+<script type="text/javascript">
+  var OPTIONS = {
+    scriptSrc: 'lyftWebButton.min.js',
+    namespace: '',
+    clientId: '',
+    clientToken: '',
+    location: {
+      pickup: {},
+      destination: {
+        latitude: '37.776503000',
+        longitude: '-122.392038500',
+      },
+    },
+    parentElement: document.getElementById('lyft-web-button-parent'),
+    queryParams: {
+      credits: ''
+    },
+    theme: 'multicolor large',
+  };
+  (function(t) {
+    var n = this.window,
+    e = this.document;
+    n.lyftInstanceIndex = n.lyftInstanceIndex || 0;
+    var a = t.parentElement,
+    c = e.createElement("script");
+    c.async = !0, c.onload = function() {
+    n.lyftInstanceIndex++;
+    var e = t.namespace ? "lyftWebButton" + t.namespace + n.lyftInstanceIndex : "lyftWebButton" + n.lyftInstanceIndex;
+    n[e] = n.lyftWebButton, t.objectName = e, n[e].initialize(t)
+  }, c.src = t.scriptSrc, a.insertBefore(c, a.childNodes[0])
+  }).call(this, OPTIONS);
+</script>
+
+	<!-- loads in library that allows us to use socket -->
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/libs/jquery-3.2.1.min.js"></script>
+	<script src="/js/libs/moment.js"></script>
+	<script src="/js/libs/mustache.js"></script>
+	<script src="/js/libs/deparam.js"></script>
+	<script src="/js/chat.js"></script>
+
+</body>
+
+</html>
