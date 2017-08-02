@@ -1,5 +1,6 @@
 const geocode = require('../geocoder/geocoder.js')
 const weather = require('../weather/weather.js')
+const yelp = require('../yelp/yelp.js')
 const path = require('path');
 const http = require('http');
 const express = require('express')
@@ -26,11 +27,12 @@ io.on('connection', (socket) => {
 				if (error) {
 					callback("Cannot find location");
 				} else {
-					weather.getWeather(loc.lat, loc.long, (error, wea) => {
+					yelp.search(params.loc, (error, restaurant) => {
 						if (error) {
-							callback("Cannot get weather");
+							console.log(error)
+							callback("Cannot get restaurant");
 						} else {
-							callback(null, wea, loc);
+							callback(null, restaurant);
 						}
 					})
 				}
