@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PRs without recent comments</title>
+    <link rel="stylesheet" type="text/css" href="/Users/Sera/Desktop/oss_devkit/templates/style.css">
+	  <script language="JavaScript" type="text/javascript" src="/Users/Sera/Desktop/oss_devkit/templates/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    
+    <div class="picture">
+       <img src="/Users/Sera/Desktop/apps/OutsideHacks/.git/git-hub/PRs.png" style="width:500px;height:400px;display:block;margin-left:auto;margin-right:auto;">
+    </div>
+    
+    <div class="center-containers">
+      <div class="container" onclick="btn_click('week-old-div', 'opened-week-old', '/Users/Sera/Desktop/oss_devkit/templates/down.png', '/Users/Sera/Desktop/oss_devkit/templates/right.png');">
+          <img src="/Users/Sera/Desktop/oss_devkit/templates/down.png" id="opened-week-old">
+          <h3 id="center-header"> All PRs without comments in over a week: </h3>
+          <h5 id="description"> All open PRs that have not been commented on by anybody in over a week. </h5>
+        <ul id="week-old-div">
+          
+            <li><a href=https://github.com/SeraYang1/OutsideHacks/pull/7 target="_blank">PR #7: SeraYang1/new_branch: 'New branch'</a></li>
+          
+            <li><a href=https://github.com/SeraYang1/OutsideHacks/pull/5 target="_blank">PR #5: SeraYang1/another-pull: 'empty'</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="container" onclick="btn_click('no-diss-div', 'opened-no-diss', '/Users/Sera/Desktop/oss_devkit/templates/down.png', '/Users/Sera/Desktop/oss_devkit/templates/right.png');">
+        <img src="/Users/Sera/Desktop/oss_devkit/templates/down.png" id="opened-no-diss">
+          <h3 id="center-header"> All PRs without discussion: </h3>
+          <h5 id="description"> All open PRs that haven't been commented on by anybody before. </h5>
+        <ul id="no-diss-div">
+          
+            <li><a href=https://github.com/SeraYang1/OutsideHacks/pull/7 target="_blank">PR #7: SeraYang1/new_branch: 'New branch'</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="container" onclick="btn_click('active-prs-div', 'opened-active-prs', '/Users/Sera/Desktop/oss_devkit/templates/down.png', '/Users/Sera/Desktop/oss_devkit/templates/right.png');">
+        <img src="/Users/Sera/Desktop/oss_devkit/templates/down.png" id="opened-active-prs">
+          <h3 id="center-header"> PRs with most active comments: </h3>
+          <h5 id="description"> Finds the top 3 PRs with the most comments by anybody. </h5>
+        <ul id="active-prs-div">
+          
+        </ul>
+      </div>
+
+      <div class="container" onclick="btn_click('oldest-prs-div', 'opened-oldest-prs', '/Users/Sera/Desktop/oss_devkit/templates/down.png', '/Users/Sera/Desktop/oss_devkit/templates/right.png');">
+        <img src="/Users/Sera/Desktop/oss_devkit/templates/down.png" id="opened-oldest-prs">
+          <h3 id="center-header"> Oldest unmerged PRs: </h3>
+          <h5 id="description"> Finds the 3 oldest PRs that haven't been merged, sorted by date. </h5>
+        <ul id="oldest-prs-div">
+          
+            <li><a href=https://github.com/SeraYang1/OutsideHacks/pull/5 target="_blank">PR #5: SeraYang1/another-pull: 'empty' --  229 days</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="container" onclick="btn_click('my-prs-div', 'opened-my-prs', '/Users/Sera/Desktop/oss_devkit/templates/down.png', '/Users/Sera/Desktop/oss_devkit/templates/right.png');">
+        <img src="/Users/Sera/Desktop/oss_devkit/templates/down.png" id="opened-my-prs">
+          <h3 id="center-header"> All PRs that I've commented on: </h3>
+          <h5 id="description"> Lists all PRs that the current user has commented on. </h5>
+        <ul id="my-prs-div">
+          
+            <li><a href=PR #5: SeraYang1/another-pull: 'empty' target="_blank">PR #5: SeraYang1/another-pull: 'empty'</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="container" onclick="btn_click('unmergeable-div', 'opened-unmergeable', '/Users/Sera/Desktop/oss_devkit/templates/down.png', '/Users/Sera/Desktop/oss_devkit/templates/right.png');">
+        <img src="/Users/Sera/Desktop/oss_devkit/templates/down.png" id="opened-unmergeable">
+          <h3 id="center-header"> All unmergeable PRs: </h3>
+          <h5 id="description"> Lists all PRs that have merge conflicts and need to be manually merged. </h5>
+        <ul id="unmergeable-div">
+          
+        </ul>
+      </div>
+
+      <div class="container" onclick="btn_click('pop-ticket-div', 'opened-pop-ticket', '/Users/Sera/Desktop/oss_devkit/templates/down.png', '/Users/Sera/Desktop/oss_devkit/templates/right.png');">
+        <img src="/Users/Sera/Desktop/oss_devkit/templates/down.png" id="opened-pop-ticket">
+          <h3 id="center-header"> Most popular tickets: </h3>
+          <h5 id="description"> List of top 3 tickets with the most comment activity.  </h5>
+        <ul id="pop-ticket-div">
+          
+        </ul>
+      </div>
+
+      <div class="container" onclick="btn_click('refer-div', 'opened-refer', '/Users/Sera/Desktop/oss_devkit/templates/down.png', '/Users/Sera/Desktop/oss_devkit/templates/right.png');">
+        <img src="/Users/Sera/Desktop/oss_devkit/templates/down.png" id="opened-refer">
+          <h3 id="center-header"> Most referred tickets: </h3>
+          <h5 id="description"> Finds open issues that are referred to from closed PRs. </h5>
+        <ul id="refer-div">
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer"></div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
